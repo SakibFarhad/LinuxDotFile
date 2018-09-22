@@ -8,6 +8,10 @@ alias upsys='sudo apt update &&
 	         sudo apt autoremove --purge && 
 	         sudo rm -rf ~/.cache/thumbnails/*'
 
+# apt package
+alias install='sudo apt install'
+alias uninstall='sudo apt purge'
+
 # copy to clipboard
 alias xclip="xargs echo -n | xclip -selection clipboard"
 
