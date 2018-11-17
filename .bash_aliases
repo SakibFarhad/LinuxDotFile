@@ -42,3 +42,10 @@ alias hdmioff='xrandr --output HDMI-1 --off'
 # turn off display
 alias doff='xset dpms force off'
 alias tea='qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock; xset dpms force off'
+
+# Android Alias
+alias adb='~/Android/Sdk/platform-tools/./adb'
+
+# CP and MV 
+alias rscp='rsync -aP'
+alias rsmv='rsync -aP --remove-source-files'
