@@ -49,3 +49,10 @@ alias adb='~/Android/Sdk/platform-tools/./adb'
 # CP and MV 
 alias rscp='rsync -aP'
 alias rsmv='rsync -aP --remove-source-files'
+
+# self explanatory
+alias ..='cd ..'
+alias ...='cd ../../'
+
+# Check Process 
+alias psg='ps aux | grep -i $1'
