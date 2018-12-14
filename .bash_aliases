@@ -7,6 +7,8 @@ alias upsys='sudo apt update &&
 	         sudo apt clean &&
 	         sudo apt autoremove --purge && 
 	         sudo rm -rf ~/.cache/thumbnails/*'
+	         
+# alias upsys='sudo pacman -Syyu' # I use Arch linux too
 
 # apt package
 alias install='sudo apt install'
