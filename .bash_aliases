@@ -1,13 +1,13 @@
 # update whole system
 alias upsys='sudo apt update &&
-	         sudo apt upgrade -y &&
-	         sudo apt dist-upgrade -y &&
-	         sudo apt autoremove -y &&
-	         sudo apt autoclean &&
-	         sudo apt clean &&
-	         sudo apt autoremove --purge && 
-	         sudo rm -rf ~/.cache/thumbnails/*'
-	         
+sudo apt upgrade -y &&
+sudo apt dist-upgrade -y &&
+sudo apt autoremove -y &&
+sudo apt autoclean &&
+sudo apt clean &&
+sudo apt autoremove --purge &&
+sudo rm -rf ~/.cache/thumbnails/*'
+
 # alias upsys='sudo pacman -Syyu' # I use Arch linux too
 
 # apt package
@@ -20,13 +20,14 @@ alias xclip="xargs echo -n | xclip -selection clipboard"
 # python3 shortcuts
 alias pysrv="python3 -m http.server 8200"
 alias ipy='ipython3'
-alias ipyv='source ~/Tools/PyEnv3/myEnv/bin/activate && ipython'
+alias pyv='source ~/Tools/PyEnv3/myEnv/bin/activate'
+alias ipyv='pyv && ipython'
 
-# nano options 
+# nano options
 alias nano="nano -Slim"
 
 # easy access
-alias c='clear' # crtl+l also works 
+alias c='clear' # crtl+l also works
 alias q='exit'
 
 # docker
@@ -48,7 +49,7 @@ alias tea='qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock; xset dpms force 
 # Android Alias
 alias adb='~/Android/Sdk/platform-tools/./adb'
 
-# CP and MV 
+# CP and MV
 alias rscp='rsync -aP'
 alias rsmv='rsync -aP --remove-source-files'
 
@@ -56,7 +57,7 @@ alias rsmv='rsync -aP --remove-source-files'
 alias ..='cd ..'
 alias ...='cd ../../'
 
-# Check Process 
+# Check Process
 alias psg='ps aux | grep -i $1'
 
 # npm package manager
