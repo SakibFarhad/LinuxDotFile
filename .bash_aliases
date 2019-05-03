@@ -17,6 +17,9 @@ alias uninstall='sudo apt purge'
 # copy to clipboard
 alias xclip="xargs echo -n | xclip -selection clipboard"
 
+# diff to colordiff
+alias diff=colordiff
+
 # python3 shortcuts
 alias pysrv="python3 -m http.server 8200"
 alias ipy='ipython3'
