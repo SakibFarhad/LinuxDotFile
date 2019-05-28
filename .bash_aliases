@@ -25,6 +25,8 @@ alias pysrv="python3 -m http.server 8200"
 alias ipy='ipython3'
 alias pyv='source ~/Tools/PyEnv3/myEnv/bin/activate'
 alias ipyv='pyv && ipython'
+alias pson='python3 -m json.tool'                                                                                                                                                                                                            
+alias xson="python3 -c 'import sys;import xml.dom.minidom;s=sys.stdin.read();print(xml.dom.minidom.parseString(s).toprettyxml())'"
 
 # nano options
 alias nano="nano -Slim"
@@ -32,6 +34,9 @@ alias nano="nano -Slim"
 # easy access
 alias c='clear' # crtl+l also works
 alias q='exit'
+
+# ping
+alias ping='ping -c 5'
 
 # docker
 alias dockerlast='docker start -a -i `docker ps -q -l`'
