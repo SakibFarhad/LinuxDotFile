@@ -1,81 +1,62 @@
-# update whole system
-alias upsys='sudo apt update &&
-sudo apt upgrade -y &&
-sudo apt dist-upgrade -y &&
-sudo apt autoremove -y &&
-sudo apt autoclean &&
-sudo apt clean &&
-sudo apt autoremove --purge &&
-sudo rm -rf ~/.cache/thumbnails/*'
+# Update
+alias upsys="sudo pacman -Syyu"
 
-# alias upsys='sudo pacman -Syyu' # I use Arch linux too
-
-# apt package
-alias install='sudo apt install'
-alias uninstall='sudo apt purge'
+# remove package
+alias remove="sudo pacman -Rcs"
 
 # copy to clipboard
 alias xclip="xargs echo -n | xclip -selection clipboard"
 
 # diff to colordiff
-alias diff=colordiff
+alias diff="colordiff"
 
 # python3 shortcuts
-alias pysrv="python3 -m http.server 8200"
-alias ipy='ipython3'
-alias pyv='source ~/Tools/PyEnv3/myEnv/bin/activate'
-alias ipyv='pyv && ipython'
-alias pson='python3 -m json.tool'                                                                                                                                                                                                            
-alias xson="python3 -c 'import sys;import xml.dom.minidom;s=sys.stdin.read();print(xml.dom.minidom.parseString(s).toprettyxml())'"
+alias pysrv="python -m http.server 8200"
+alias ipy="ipython"
+alias pyv="source ~/Tools/PyEnv/myEnv/bin/activate"
+alias ipyv="pyv && ipython"
+alias pson="python -m json.tool"                                                                                                                                                                                                          
+alias xson="python -c 'import sys;import xml.dom.minidom;s=sys.stdin.read();print(xml.dom.minidom.parseString(s).toprettyxml())'"
 
 # nano options
 alias nano="nano -Slim"
 
 # easy access
-alias c='clear' # crtl+l also works
-alias q='exit'
+alias c="clear"
+alias q="exit"
+
+# list ls
+alias ll="ls -lh"
 
 # ping
-alias ping='ping -c 5'
-
-# docker
-alias dockerlast='docker start -a -i `docker ps -q -l`'
+alias ping="ping -c 5"
 
 # let dd show progress
-alias dd=dcfldd
+alias dd="dcfldd"
 
 # I make a lot of mistakes
-alias suod=sudo
+alias suod="sudo"
 
 # I use 2 monitors
-alias hdmioff='xrandr --output HDMI-1 --off'
+alias hdmioff="xrandr --output HDMI-1-1 --off"
 
 # turn off display
-alias doff='xset dpms force off'
-alias tea='qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock; xset dpms force off'
+alias doff="xset dpms force off"
+alias tea="qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock; xset dpms force off"
 
-# Android Alias
-alias adb='~/Android/Sdk/platform-tools/./adb'
+# aria
+alias aria="aria2c -c -x 8 --file-allocation=none --summary-interval=0"
+
+# mkdir 
+alias mkdir="mkdir -p"
 
 # CP and MV
-alias rscp='rsync -aP'
-alias rsmv='rsync -aP --remove-source-files'
+alias rscp="rsync -aP"
+alias rsmv="rsync -aP --remove-source-files"
 
 # self explanatory
-alias ..='cd ..'
-alias ...='cd ../../'
+alias ..="cd .."
+alias ...="cd ../../"
 
 # Check Process
-alias psg='ps aux | grep -i $1'
-
-# npm package manager
-# before this run -> mkdir "${HOME}/.npm-packages"
-export NPM_PACKAGES="${HOME}/.npm-packages"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-
-PATH="$NPM_PACKAGES/bin:$PATH"
-# Unset manpath so we can inherit from /etc/manpath via the `manpath`
-# command
-unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-
+alias psg="ps aux | grep -i $1"
