@@ -2,7 +2,7 @@
 alias upsys="sudo pacman -Syyu"
 
 # remove package
-alias remove="sudo pacman -Rcs"
+alias remove="sudo pacman -Rncs"
 
 # copy to clipboard
 alias xclip="xargs echo -n | xclip -selection clipboard"
@@ -13,13 +13,10 @@ alias diff="colordiff"
 # python3 shortcuts
 alias pysrv="python -m http.server 8200"
 alias ipy="ipython"
-alias pyv="source ~/Tools/PyEnv/myEnv/bin/activate"
+alias pyv="source ~/.env/bin/activate"
 alias ipyv="pyv && ipython"
 alias pson="python -m json.tool"                                                                                                                                                                                                          
 alias xson="python -c 'import sys;import xml.dom.minidom;s=sys.stdin.read();print(xml.dom.minidom.parseString(s).toprettyxml())'"
-
-# nano options
-alias nano="nano -Slim"
 
 # easy access
 alias c="clear"
@@ -51,8 +48,8 @@ alias aria="aria2c -c -x 8 --file-allocation=none --summary-interval=0"
 alias mkdir="mkdir -p"
 
 # CP and MV
-alias rscp="rsync -aP"
-alias rsmv="rsync -aP --remove-source-files"
+alias cp="rsync -aP"
+alias mv="rsync -aP --remove-source-files"
 
 # self explanatory
 alias ..="cd .."
