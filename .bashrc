@@ -2,13 +2,9 @@
 # ~/.bashrc
 #
 
-#set JAVA_HOME dynamically
-export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # Alias definitions.
@@ -27,8 +23,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# create dir and cd into it
-mkcd ()
-{
-    mkdir -p -- "$1" && cd -P -- "$_"
-}
+# Auto cd
+shopt -s autocd
+
+# Go Path Variables
+export GOPATH=~/.go
+export PATH=$PATH:$GOPATH/bin
+export GOHOME=~/Projects/goprojects
+export GOBIN=$GOHOME/bin
+export GOPATH=$GOPATH:$GOHOME
+

@@ -1,5 +1,5 @@
 # Update
-alias upsys="sudo pacman -Syyu"
+alias upsys="sudo pacman -Syu"
 
 # remove package
 alias remove="sudo pacman -Rncs"
@@ -48,8 +48,9 @@ alias aria="aria2c -c -x 8 --file-allocation=none --summary-interval=0"
 alias mkdir="mkdir -p"
 
 # CP and MV
-alias cp="rsync -aP"
-alias mv="rsync -aP --remove-source-files"
+alias cp='rsync -arpXog -zz --stats --progress'
+# alias mv='rsync -arpXog -zz --remove-source-files --stats --progress'
+
 
 # self explanatory
 alias ..="cd .."
@@ -57,3 +58,10 @@ alias ...="cd ../../"
 
 # Check Process
 alias psg="ps aux | grep -i $1"
+
+# create dir and cd into it
+mkcd ()
+{
+    mkdir -p -- "$1" && cd -P -- "$_"
+}
+
