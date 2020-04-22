@@ -49,8 +49,9 @@ alias mkdir="mkdir -p"
 
 # CP and MV
 alias cp='rsync -arpXog -zz --stats --progress'
-# alias mv='rsync -arpXog -zz --remove-source-files --stats --progress'
-
+mv() {
+    rsync -arpXog --remove-source-files --stats --progress $1 $2 && rm -rf $1
+}
 
 # self explanatory
 alias ..="cd .."
@@ -60,8 +61,7 @@ alias ...="cd ../../"
 alias psg="ps aux | grep -i $1"
 
 # create dir and cd into it
-mkcd ()
-{
+mkcd () {
     mkdir -p -- "$1" && cd -P -- "$_"
 }
 
