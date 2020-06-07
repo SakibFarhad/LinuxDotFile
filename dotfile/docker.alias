@@ -1,0 +1,13 @@
+dclrc () {
+    docker rm -f $(docker ps -aq)
+}
+
+dclri() {
+    docker rmi -f $(docker images -aq)
+}
+
+dclrall () {
+    docclrc()
+    docclri()
+}
+
