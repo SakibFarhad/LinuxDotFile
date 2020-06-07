@@ -7,7 +7,7 @@ dclri() {
 }
 
 dclrall () {
-    dclrc()
-    dclri()
+    dclrc
+    dclri
 }
 
