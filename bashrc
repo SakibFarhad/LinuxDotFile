@@ -23,7 +23,7 @@ source /usr/share/nvm/init-nvm.sh
 # Load alias file
 source $HOME/.dotfile/python.alias
 source $HOME/.dotfile/shell.alias
-source $HOME/.dotfile/docker.alias
+source $HOME/.dotfile/git.alias
 source $HOME/.dotfile/go.alias
 
 

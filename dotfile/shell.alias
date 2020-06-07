@@ -26,6 +26,7 @@ alias q="exit"
 
 # list ls
 alias ll="ls -lh"
+alias ls="ls --color"
 
 # ping
 alias ping="ping -c 5"

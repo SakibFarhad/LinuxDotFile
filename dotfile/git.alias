@@ -1,0 +1,3 @@
+alias gadd="git add"
+alias gpull="git pull"
+alias gcommit="git commit"
