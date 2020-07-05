@@ -1,13 +1,6 @@
 # Update
 upsys() {
-  echo "Updating Application..."
-    sudo pacman -Syu
-
-  echo " "
-  echo "Cleaning cache & directories..."
-    sudo pacman -Sc #--noconfirm
-    
-  echo " "
+  sudo pacman -Syu
   echo "Update Complete!!"
 }
 
@@ -38,7 +31,7 @@ alias dd="dcfldd"
 alias suod="sudo"
 
 # I use 2 monitors
-alias hdmioff="xrandr --output HDMI-1-1 --off"
+alias hdmioff="xrandr --output HDMI-2 --off"
 
 # turn off display
 alias doff="xset dpms force off"
@@ -62,3 +55,4 @@ mkcd () {
     mkdir -p -- "$1" && cd -P -- "$_"
 }
 
+export HOSTALIASES=~/.hosts
