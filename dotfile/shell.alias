@@ -40,7 +40,7 @@ alias tea="qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock; xset dpms force 
 # aria
 alias aria="aria2c -c -x 8 --file-allocation=none --summary-interval=0"
 
-# mkdir 
+# mkdir
 alias mkdir="mkdir -p"
 
 # self explanatory
@@ -55,4 +55,4 @@ mkcd () {
     mkdir -p -- "$1" && cd -P -- "$_"
 }
 
-export HOSTALIASES=~/.hosts
+shopt -s cdspell
