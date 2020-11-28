@@ -4,8 +4,37 @@ upsys() {
   echo "Update Complete!!"
 }
 
-# remove package
-alias remove="sudo pacman -Rncs"
+# Extrace zip files
+extract () { # extract files. Ignore files with improper extensions.
+  local x
+  ee() { # echo and execute
+      echo "$@"
+      $1 "$2"
+  }
+  for x in "$@"; do
+      [[ -f $x ]] || continue
+      case "$x" in
+          *.tar.bz2 | *.tbz2 )    ee "tar xvjf" "$x"  ;;
+          *.tar.gz | *.tgz ) ee "tar xvzf" "$x"   ;;
+          *.bz2 )             ee "bunzip2" "$x"   ;;
+          *.rar )             ee "unrar x" "$x"   ;;
+          *.gz )              ee "gunzip" "$x"    ;;
+          *.tar )             ee "tar xvf" "$x"   ;;
+          *.zip )             ee "unzip" "$x"     ;;
+          *.Z )               ee "uncompress" "$x" ;;
+          *.7z )              ee "7z x" "$x"      ;;
+      esac
+  done
+}
+
+# do sudo, or sudo the last command if no argument given
+s() { 
+  if [[ $# == 0 ]]; then
+      sudo $(history -p '!!')
+  else
+      sudo "$@"
+  fi
+}
 
 # copy to clipboard
 alias xclip="xargs echo -n | xclip -selection clipboard"
@@ -18,14 +47,20 @@ alias c="clear"
 alias q="exit"
 
 # list ls
-alias ll="ls -lh"
-alias ls="ls --color"
+alias ls="exa --color always"
+alias ll="exa -l"
+alias lo="exa -o"
+alias lh="exa -lh"
+alias la="exa -la"
+alias sl="exa"
+alias l="exa"
+alias s="exa"
 
 # ping
 alias ping="ping -c 5"
 
 # let dd show progress
-alias dd="dcfldd"
+alias dd="dd status=progress"
 
 # I make a lot of mistakes
 alias suod="sudo"
@@ -55,4 +90,8 @@ mkcd () {
     mkdir -p -- "$1" && cd -P -- "$_"
 }
 
-shopt -s cdspell
+# I find myself doing this a lot
+alias hg='history | grep '
+
+# Likewise this, plus I'm always mistyping it...
+alias findy='find . -name'
