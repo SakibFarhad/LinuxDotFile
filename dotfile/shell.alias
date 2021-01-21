@@ -4,6 +4,13 @@ upsys() {
   echo "Update Complete!!"
 }
 
+# Restart Route
+routeReset() {
+   sudo route add -net 192.168.39.0/24 dev virbr2 
+   sudo route add -net 192.168.121.0/24 dev virbr1 
+   sudo route add -net 192.168.122.0/24 dev virbr0
+}
+
 # Extrace zip files
 extract () { # extract files. Ignore files with improper extensions.
   local x
@@ -28,7 +35,7 @@ extract () { # extract files. Ignore files with improper extensions.
 }
 
 # do sudo, or sudo the last command if no argument given
-s() { 
+s () { 
   if [[ $# == 0 ]]; then
       sudo $(history -p '!!')
   else
@@ -38,6 +45,7 @@ s() {
 
 # copy to clipboard
 alias xclip="xargs echo -n | xclip -selection clipboard"
+alias wclip="wl-copy -n"
 
 # diff to colordiff
 alias diff="colordiff"
@@ -47,14 +55,14 @@ alias c="clear"
 alias q="exit"
 
 # list ls
-alias ls="exa --color always"
-alias ll="exa -l"
-alias lo="exa -o"
-alias lh="exa -lh"
-alias la="exa -la"
-alias sl="exa"
-alias l="exa"
-alias s="exa"
+alias ls="exa -g --color always"
+alias ll="exa -lg --color always"
+alias lo="exa -og --color always"
+alias lh="exa -lgh --color always"
+alias la="exa -lag --color always"
+alias sl="exa --color always"
+alias l="exa --color always"
+alias s="exa --color always"
 
 # ping
 alias ping="ping -c 5"
@@ -95,3 +103,7 @@ alias hg='history | grep '
 
 # Likewise this, plus I'm always mistyping it...
 alias findy='find . -name'
+
+# docker 
+alias docker=podman
+alias docker-compose=podman-compose

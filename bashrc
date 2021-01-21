@@ -26,6 +26,7 @@ source $HOME/.dotfile/shell.alias
 source $HOME/.dotfile/git.alias
 source $HOME/.dotfile/go.alias
 
+PYHOME_BIN=/home/sakib/.local/bin
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
@@ -36,4 +37,4 @@ MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 # User Variables
 export ANDROID_SDK=~/Apps/Android/Sdk
 export ANDROID_COMMANDLINE_TOOLS=~/Apps/commandlinetools-linux
-export PATH=$PATH:$ANDROID_COMMANDLINE_TOOLS/bin:$ANDROID_SDK:$ANDROID_SDK/tools
+export PATH=$PATH:$ANDROID_COMMANDLINE_TOOLS/bin:$ANDROID_SDK:$ANDROID_SDK/tools:$PYHOME_BIN
