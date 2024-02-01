@@ -5,6 +5,11 @@ upsys() {
   echo "Update Complete!!"
 }
 
+# Clean page cache, dentries, and inodes
+clearCache() {
+  sudo sync; echo 3 > sudo tee /proc/sys/vm/drop_caches
+}
+
 # Restart Route
 #routeReset() {
 #   sudo route add -net 192.168.39.0/24 dev virbr2 
