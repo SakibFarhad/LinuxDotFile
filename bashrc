@@ -14,7 +14,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
 shopt -s autocd
 shopt -s cdspell
 
@@ -25,16 +24,19 @@ source $HOME/.dotfile/python.alias
 source $HOME/.dotfile/shell.alias
 source $HOME/.dotfile/git.alias
 source $HOME/.dotfile/go.alias
+source $HOME/.dotfile/tf.alias
 
 PYHOME_BIN=/home/sakib/.local/bin
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-PATH="$NPM_PACKAGES/bin:$PATH"
+CUDA_HOME=/usr/local/cuda-11.8
+GOBIN=/home/sakib/Projects/goprojects/
+export PATH=$NPM_PACKAGES/bin:$CUDA_HOME/bin:$GOBIN/bin:$PATH
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 
-# User Variables
-export ANDROID_SDK=~/Apps/Android/Sdk
-export ANDROID_COMMANDLINE_TOOLS=~/Apps/commandlinetools-linux
-export PATH=$PATH:$ANDROID_COMMANDLINE_TOOLS/bin:$ANDROID_SDK:$ANDROID_SDK/tools:$PYHOME_BIN
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"

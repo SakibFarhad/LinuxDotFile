@@ -1,15 +1,16 @@
 # Update
 upsys() {
-  sudo pacman -Syu
+  sudo pacman -Syyu archlinux-keyring
+  yay -Syu
   echo "Update Complete!!"
 }
 
 # Restart Route
-routeReset() {
-   sudo route add -net 192.168.39.0/24 dev virbr2 
-   sudo route add -net 192.168.121.0/24 dev virbr1 
-   sudo route add -net 192.168.122.0/24 dev virbr0
-}
+#routeReset() {
+#   sudo route add -net 192.168.39.0/24 dev virbr2 
+#   sudo route add -net 192.168.121.0/24 dev virbr1 
+#   sudo route add -net 192.168.122.0/24 dev virbr0
+#}
 
 # Extrace zip files
 extract () { # extract files. Ignore files with improper extensions.
@@ -32,15 +33,6 @@ extract () { # extract files. Ignore files with improper extensions.
           *.7z )              ee "7z x" "$x"      ;;
       esac
   done
-}
-
-# do sudo, or sudo the last command if no argument given
-s () { 
-  if [[ $# == 0 ]]; then
-      sudo $(history -p '!!')
-  else
-      sudo "$@"
-  fi
 }
 
 # copy to clipboard
@@ -74,7 +66,7 @@ alias dd="dd status=progress"
 alias suod="sudo"
 
 # I use 2 monitors
-alias hdmioff="xrandr --output HDMI-2 --off"
+#alias hdmioff="xrandr --output HDMI-2 --off"
 
 # turn off display
 alias doff="xset dpms force off"
@@ -104,6 +96,3 @@ alias hg='history | grep '
 # Likewise this, plus I'm always mistyping it...
 alias findy='find . -name'
 
-# docker 
-alias docker=podman
-alias docker-compose=podman-compose
